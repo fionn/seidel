@@ -1,7 +1,6 @@
 TARGET = seidel
 
 CXXFLAGS = -Wall -O2 -flto
-LDFLAGS = $(CXXFLAGS)
 
 SRCS = src/potential.cpp src/update_gauss_seidel.cpp src/electric_field.cpp \
        src/initialise_boundary.cpp src/relax.cpp src/gs.cpp src/translate_y.cpp \
@@ -13,7 +12,7 @@ all: $(TARGET)
 	$(info)
 
 $(TARGET): $(OBJS)
-	g++ $(LDFLAGS) $(OBJS) -o $(TARGET)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $(TARGET)
 
 .PHONY: clean
 clean:
@@ -25,5 +24,5 @@ delete:
 
 .PHONY: tar
 tar:
-	@tar -cvJf $(TARGET).tar.xz makefile $(SRCS) $(HDRS)
+	@tar -cvJf $(TARGET).tar.xz Makefile $(SRCS) $(HDRS)
 

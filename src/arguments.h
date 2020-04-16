@@ -1,3 +1,6 @@
+#ifndef ARGUMENTS_H
+#define ARGUMENTS_H
+
 struct arguments
 {
     bool print, translate, overrelax, norelax, clean;
@@ -5,3 +8,4 @@ struct arguments
     int a, b, n;
 };
 
+#endif
