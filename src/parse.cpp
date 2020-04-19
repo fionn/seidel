@@ -1,7 +1,7 @@
 #include <argp.h>
 #include <iostream>
-#include "arguments.h"
-#include "parse.h"
+#include "arguments.hpp"
+#include "parse.hpp"
 
 void clean()
 {

@@ -1,8 +1,8 @@
-#include "potential.h"
-#include "initialise_boundary.h"
-#include "update_gauss_seidel.h"
-#include "electric_field.h"
-#include "gs.h"
+#include "potential.hpp"
+#include "initialise_boundary.hpp"
+#include "update_gauss_seidel.hpp"
+#include "electric_field.hpp"
+#include "gs.hpp"
 
 double gs(Potential u, int a, int b, int da, int db, double alpha, double w)
 // Wraps the Gauss-Seidel algorithm and iterates until

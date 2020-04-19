@@ -1,5 +1,5 @@
-#include "potential.h"
-#include "update_gauss_seidel.h"
+#include "potential.hpp"
+#include "update_gauss_seidel.hpp"
 
 bool update_gauss_seidel(Potential u, double alpha, int a, int b, int a_len, int b_len, double w)
 // Solves the Laplace equation via the Gauss-Seidel

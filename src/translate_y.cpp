@@ -1,7 +1,7 @@
 #include <iostream>
-#include "potential.h"
-#include "gs.h"
-#include "translate_y.h"
+#include "potential.hpp"
+#include "gs.hpp"
+#include "translate_y.hpp"
 
 void translate_y(Potential u, int a, int da, int db, double alpha, double w)
 // Moves the container vertically through the region,

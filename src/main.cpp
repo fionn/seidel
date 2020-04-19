@@ -1,11 +1,11 @@
 #include <iostream>
-#include "potential.h"
-#include "electric_field.h"
-#include "translate_y.h"
-#include "gs.h"
-#include "relax.h"
-#include "arguments.h"
-#include "parse.h"
+#include "potential.hpp"
+#include "electric_field.hpp"
+#include "translate_y.hpp"
+#include "gs.hpp"
+#include "relax.hpp"
+#include "arguments.hpp"
+#include "parse.hpp"
 
 int main(int argc, char *argv[])
 { 

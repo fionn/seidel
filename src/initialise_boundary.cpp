@@ -1,5 +1,5 @@
-#include "potential.h"
-#include "initialise_boundary.h"
+#include "potential.hpp"
+#include "initialise_boundary.hpp"
 
 void initialise_boundary(Potential u, int a, int b, int da, int db)
 // Sets the boundary conditions and the value of the 

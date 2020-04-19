@@ -1,6 +1,7 @@
-#include "potential.h"
+#include <iostream>
+#include "potential.hpp"
 
-Potential::Potential(int m) // constructor
+Potential::Potential(int m)
 {
 	n = m;
 	data = new double [n * n];
