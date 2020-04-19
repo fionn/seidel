@@ -1,6 +1,8 @@
 TARGET = seidel
 
-CXXFLAGS = -Wall -O2 -flto
+CXX = clang++
+CXXFLAGS = -Wall -O2 -flto -fsanitize=address -g
+#LDFLAGS = -fuse-ld=gold
 
 SRCS = src/potential.cpp src/update_gauss_seidel.cpp src/electric_field.cpp \
        src/initialise_boundary.cpp src/relax.cpp src/gs.cpp src/translate_y.cpp \
