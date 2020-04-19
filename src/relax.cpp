@@ -1,9 +1,9 @@
 #include <iostream>
 #include <cmath>
-#include "potential.h"
-#include "initialise_boundary.h"
-#include "update_gauss_seidel.h"
-#include "relax.h"
+#include "potential.hpp"
+#include "initialise_boundary.hpp"
+#include "update_gauss_seidel.hpp"
+#include "relax.hpp"
 
 double relax(Potential u, int a, int b, int da, int db, double alpha, 
                                                     bool run, double argsw)
@@ -15,8 +15,10 @@ double relax(Potential u, int a, int b, int da, int db, double alpha,
     else
     {
         double prev_iteration = INFINITY;
-        for(double w = 1; w < 2; w += 0.01)    
+
+        for(double w = 1; w < 2; w += 0.01)
         {
+
             initialise_boundary(u, a, b, da, db);
 
             int iteration = 0;

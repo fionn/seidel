@@ -1,5 +1,5 @@
-#include "potential.h"
-#include "electric_field.h"
+#include "potential.hpp"
+#include "electric_field.hpp"
 #include <fstream>
 
 double electric_field(Potential u, bool print = false)

@@ -6,17 +6,21 @@ SRCS = src/potential.cpp src/update_gauss_seidel.cpp src/electric_field.cpp \
        src/initialise_boundary.cpp src/relax.cpp src/gs.cpp src/translate_y.cpp \
        src/parse.cpp src/main.cpp
 OBJS = $(subst .cpp,.o,$(SRCS))
-HDRS = $(filter-out src/main.h, $(subst .cpp,.h,$(SRCS))) src/arguments.h
+HDRS = $(filter-out src/main.hpp, $(subst .cpp,.hpp,$(SRCS))) src/arguments.hpp
 
 all: $(TARGET)
 	$(info)
 
 $(TARGET): $(OBJS)
-	$(CXX) $(LDFLAGS) $(OBJS) -o $(TARGET)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@
 
 .PHONY: clean
 clean:
 	@$(RM) -v $(OBJS)
+
+.PHONY: cleanall
+cleanall: clean
+	@$(RM) -v $(TARGET)
 
 .PHONY: delete
 delete:
@@ -25,4 +29,8 @@ delete:
 .PHONY: tar
 tar:
 	@tar -cvJf $(TARGET).tar.xz Makefile $(SRCS) $(HDRS)
+
+.PHONY: lint
+lint:
+	@clang-tidy $(HDRS) $(SRCS)
 

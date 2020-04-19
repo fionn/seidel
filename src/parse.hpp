@@ -2,7 +2,7 @@
 #define PARSING_H
 
 #include <argp.h>
-#include "arguments.h"
+#include "arguments.hpp"
 
 void clean();
 error_t parse_opt(int, char, struct argp_state);
