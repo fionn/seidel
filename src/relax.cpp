@@ -15,10 +15,10 @@ double relax(Potential u, int a, int b, int da, int db, double alpha,
     else
     {
         double prev_iteration = INFINITY;
+        double w = 1, dw = 0.01;
 
-        for(double w = 1; w < 2; w += 0.01)
+        while(w < 2)
         {
-
             initialise_boundary(u, a, b, da, db);
 
             int iteration = 0;
@@ -32,13 +32,15 @@ double relax(Potential u, int a, int b, int da, int db, double alpha,
 
             if(iteration > prev_iteration)
             {
-                std::cout << "ω = " << w - 0.01 << std::endl;
-                return w - 0.01; // optimal over-relaxation parameter
+                std::cout << "ω = " << w - dw << std::endl;
+                return w - dw; // optimal over-relaxation parameter
             }
             else
                 prev_iteration = iteration;
 
             std::cout << w << "\t" << iteration << std::endl;
+
+            w += dw;
         }
     }
 
